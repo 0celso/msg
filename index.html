@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vem dormir comigo hoje?</title>
+  <style>
+    body {
+      background-color: #b81414;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    h1 {
+      color: white;
+    }
+    .buttons-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    button {
+      background-color: white;
+      color: #b81414;
+      border: none;
+      border-radius: 20px;
+      padding: 10px 20px;
+      margin: 0 10px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    button:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>Vem dormir comigo hoje?</h1>
+  <div class="buttons-container">
+    <button id="sim">Sim</button>
+    <button id="nao">Não</button>
+  </div>
+
+  <script>
+    const naoButton = document.getElementById('nao');
+
+    function moveButton() {
+      const randomX = Math.floor(Math.random() * (window.innerWidth - 150)); // 150 is approximately button width
+      const randomY = Math.floor(Math.random() * (window.innerHeight - 50)); // 50 is approximately button height
+
+      naoButton.style.position = 'absolute';
+      naoButton.style.left = `${randomX}px`;
+      naoButton.style.top = `${randomY}px`;
+    }
+
+    naoButton.addEventListener('click', moveButton);
+
+    document.getElementById('sim').addEventListener('click', function() {
+      window.location.href = 'https://i.imgur.com/jEMNbUh.jpg';
+    });
+  </script>
+</body>
+</html>
